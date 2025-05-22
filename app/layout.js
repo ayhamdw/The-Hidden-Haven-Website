@@ -2,7 +2,12 @@ import Logo from "./_components/Logo";
 import Navigation from "./_components/Navigation";
 import "@/app/_styles/globals.css";
 export const metadata = {
-  title: "The Hidden Haven",
+  title: {
+    template: "%s The Hidden Haven",
+    default: "Welcome / The Hidden Haven",
+  },
+  description:
+    "Luxurious Cabin hotel, located in the heart of the Italian Dolomites, surrounded by beautiful mountains and dark forests",
 };
 
 export default function RootLayout({ children }) {
