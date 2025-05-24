@@ -10,6 +10,7 @@ export const metadata = {
   description:
     "Experience luxury and tranquility at The Hidden Haven, a premium cabin hotel nestled in the heart of the Italian Dolomites. Enjoy breathtaking mountain views, exclusive amenities, and unforgettable adventures in nature",
 };
+
 export default function Page() {
   return (
     <main className="mt-24">
