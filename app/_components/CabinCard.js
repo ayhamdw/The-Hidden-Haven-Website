@@ -4,10 +4,11 @@ import { UsersIcon } from "@heroicons/react/24/solid";
 
 function CabinCard({ cabin }) {
   const { id, name, maxCapacity, regularPrice, discount, image } = cabin;
+  console.log(image);
 
   return (
     <div className="flex border-primary-800 border">
-      <div className="flex-1 relative">
+      <div className="flex-1 hidden sm:block sm:relative">
         <Image
           src={image}
           fill
