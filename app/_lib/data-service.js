@@ -1,5 +1,5 @@
 import { eachDayOfInterval } from "date-fns";
-
+import { supabase } from "./supabase";
 export async function getCabin(id) {
   const { data, error } = await supabase
     .from("cabins")
