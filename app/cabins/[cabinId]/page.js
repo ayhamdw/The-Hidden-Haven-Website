@@ -1,3 +1,5 @@
+import DateSelector from "@/app/_components/DateSelector";
+import ReservationForm from "@/app/_components/ReservationForm";
 import TextExpander from "@/app/_components/TextExpander";
 import { getCabin, getCabins } from "@/app/_lib/data-service";
 import { EyeSlashIcon, MapPinIcon, UsersIcon } from "@heroicons/react/24/solid";
@@ -128,6 +130,12 @@ export default async function Page({ params }) {
           to breathtaking mountain views, enjoy complete privacy, and create
           unforgettable memories in the heart of the Dolomites.
         </p>
+        <div className="flex flex-col md:flex-row gap-8 border border-primary-800 rounded-2xl overflow-hidden shadow-lg min-h-[400px] bg-primary-900/80">
+          <div className="flex-1 flex flex-col justify-center">
+            <DateSelector />
+            <ReservationForm />
+          </div>
+        </div>
       </div>
     </div>
   );
