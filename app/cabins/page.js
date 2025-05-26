@@ -1,10 +1,13 @@
 import { Suspense } from "react";
 import CabinList from "../_components/CabinList";
 import Loading from "./loading";
+import { getCabins } from "../_lib/data-service";
 
 export const metadata = {
   title: "Cabins",
 };
+
+export const revalidate = 3600;
 export default async function Page() {
   return (
     <div>
