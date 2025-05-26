@@ -1,3 +1,4 @@
+import TextExpander from "@/app/_components/TextExpander";
 import { getCabin, getCabins } from "@/app/_lib/data-service";
 import { EyeSlashIcon, MapPinIcon, UsersIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
@@ -51,7 +52,7 @@ export default async function Page({ params }) {
 
         <div className="md:ml-80">
           <p className="text-lg md:text-xl text-primary-100 mb-8 leading-relaxed">
-            {description}
+            <TextExpander>{description}</TextExpander>
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
