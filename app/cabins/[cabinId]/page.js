@@ -5,7 +5,8 @@ import { getCabin, getCabins } from "@/app/_lib/data-service";
 import { Suspense } from "react";
 
 export async function generateMetadata({ params }) {
-  const cabin = await getCabin(params.cabinId);
+  const cabinId = await params.cabinId;
+  const cabin = await getCabin(cabinId);
   const { name } = cabin;
   return { title: `Cabin ${name}` };
 }
@@ -17,7 +18,8 @@ export async function generateStaticParams() {
 }
 
 export default async function Page({ params }) {
-  const cabin = await getCabin(params.cabinId);
+  const cabinId = await params.cabinId;
+  const cabin = await getCabin(cabinId);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-primary-950 via-primary-900 to-primary-800 pb-24">
