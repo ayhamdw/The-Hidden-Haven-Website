@@ -1,5 +1,6 @@
 import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
+import { signIn, signOut } from "next-auth/react";
 
 export const authConfig = {
   providers: [
@@ -13,6 +14,9 @@ export const authConfig = {
       return !!auth?.user;
     },
   },
+  pages: {
+    signIn: "/login",
+  },
 };
 const handler = NextAuth(authConfig);
-export { handler as GET, handler as POST };
+export { signIn, signOut, handler as GET, handler as POST };

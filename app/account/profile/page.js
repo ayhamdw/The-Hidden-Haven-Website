@@ -1,11 +1,14 @@
 import SelectCountry from "@/app/_components/SelectCountry";
 import UpdateProfileForm from "@/app/_components/UpdateProfileForm";
+import { authConfig } from "@/app/_lib/auth";
+import { getServerSession } from "next-auth";
 
 export const metadata = {
   title: "Update Profile",
 };
 
-export default function Page() {
+export default async function Page() {
+  const session = await getServerSession(authConfig);
   const countryFlag = "ps.jpg";
   const nationality = "palestinian";
   return (
