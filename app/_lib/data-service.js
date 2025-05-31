@@ -1,6 +1,7 @@
 import { eachDayOfInterval } from "date-fns";
 import { supabase } from "./supabase";
 import { notFound } from "next/navigation";
+import { revalidatePath } from "next/cache";
 
 export async function getCabin(id) {
   const { data, error } = await supabase
@@ -175,6 +176,7 @@ export async function updateGuest(id, updatedFields) {
     console.error(error);
     throw new Error("Guest could not be updated");
   }
+
   return data;
 }
 

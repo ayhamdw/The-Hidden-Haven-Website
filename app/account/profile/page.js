@@ -9,8 +9,6 @@ export const metadata = {
 };
 
 export default async function Page() {
-  const countryFlag = "ps.jpg";
-  const nationality = "palestinian";
   const session = await getServerSession(authConfig);
   const guest = await getGuest(session?.user.email);
 
@@ -28,10 +26,12 @@ export default async function Page() {
         {" "}
         {/*i did this because i wanna render server component inside client component*/}
         <SelectCountry
+          key={`${guest.nationality}-${guest.countryFlag}`}
           name="nationality"
           id="nationality"
           className="px-5 py-3 bg-primary-200 text-primary-800 w-full shadow-sm rounded-sm"
           defaultCountry={guest.nationality}
+          countryFlag={guest.countryFlag}
         />
       </UpdateProfileForm>
     </div>
