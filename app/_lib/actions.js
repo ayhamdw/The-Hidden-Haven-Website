@@ -3,6 +3,7 @@
 import { getServerSession } from "next-auth";
 import { updateGuest } from "./data-service";
 import { authConfig } from "./auth";
+import { revalidatePath } from "next/cache";
 
 export async function updateProfile(formData) {
   const session = await getServerSession(authConfig);
@@ -18,4 +19,5 @@ export async function updateProfile(formData) {
   const updateData = { nationality, countryFlag, nationalID };
 
   await updateGuest(userId, updateData);
+  revalidatePath("/account/profile");
 }
