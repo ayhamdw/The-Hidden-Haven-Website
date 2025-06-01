@@ -33,12 +33,10 @@ function SideNavigation() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
 
-  // Close menu when route changes
   useEffect(() => {
     setIsOpen(false);
   }, [pathname]);
 
-  // Prevent scrolling when menu is open
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
