@@ -2,6 +2,7 @@ import Image from "next/image";
 import about1 from "@/public/about-1.jpg";
 import about2 from "@/public/about-2.jpg";
 import { getCabins } from "../_lib/data-service";
+import Link from "next/link";
 
 export const revalidate = 86400;
 
@@ -82,12 +83,12 @@ export default async function Page() {
               and every visit is like coming home.
             </p>
             <div>
-              <a
+              <Link
                 href="/cabins"
                 className="inline-block mt-4 bg-accent-500 px-8 py-4 text-primary-800 text-lg font-bold rounded-full shadow-lg hover:bg-accent-600 active:scale-95 transition-all duration-200"
               >
                 Explore our luxury cabins
-              </a>
+              </Link>
             </div>
           </div>
         </div>
