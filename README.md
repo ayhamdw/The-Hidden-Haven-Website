@@ -1,7 +1,3 @@
-
-README.txt
-===========
-
 🌲 The Hidden Haven — A Digital Mountain Retreat 🌲
 ---------------------------------------------------
 
